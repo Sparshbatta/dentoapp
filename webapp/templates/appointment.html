@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'webapp/img/bg-img/dentalCare.jpg' %});">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h2 class="title">Appointment Details</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+<br/>
+{% if your_name %}
+<h1 style="text-align: center;">Review Your Stated Information</h1>
+<div class="container info" style="text-align: center;">
+ <p class="ap-info"><strong>Name</strong> - {{your_name}}<br/>
+ <strong>Phone Number</strong>	 - {{your_phone}}<br/>
+ <strong>Email</strong>	 - {{your_email}}<br/>
+ <strong>Address</strong>	 - {{your_address}}<br/>
+ <strong>Schedule</strong> - {{your_schedule}}<br/>
+ <strong>Day</strong> - {{your_day}}<br/>
+ <strong>Message</strong> - {{your_message}}</p>
+</div>
+<br>
+{% else %}
+<h1 style="text-align: center;">Our Address</h1>
+<div class="container" style="text-align: center;">
+<div class="row">
+        <div class="col-12">
+          <div class="google-maps mb-100">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.2302929023667!2d76.21124381497495!3d30.711925631644423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39100e2f590dbf03%3A0xab130c55d1dc1301!2sGrain%20Market-APMC%20Marketyard%2C%20Khanna!5e0!3m2!1sen!2sin!4v1640501322400!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+  </div>
+{% endif %}
+{% endblock %}
